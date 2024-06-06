@@ -1,7 +1,7 @@
 
 function Navbar() {
   return (
-    <div className="h-[104px] w-full p-10 bg-white flex justify-between items-center">
+    <div className="h-[104px] w-full py-[32px] px-[98px] bg-white flex justify-between items-center">
     <div className="flex gap-3 items-center">
         {/* logo//brand */}
             <div><svg width="148" height="32" viewBox="0 0 148 32" fill="none" xmlns="http://www.w3.org/2000/svg" cursor="pointer">
@@ -21,7 +21,7 @@ function Navbar() {
         </div>
       </div>
         {/* fav button */}
-        <div className="h-[40px] w-[153px] bg-[#FF0059] rounded-lg" >
+        <div className="h-[40px] w-[153px] bg-[#FF0059] rounded-lg flex items-center justify-center gap-2" >
             <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd" d="M9.99413 3.27985C8.328 1.332 5.54963 0.808035 3.46208 2.59168C1.37454 4.37532 1.08064 7.35748 2.72 9.467C3.95825 11.0604 7.47592 14.2591 9.12318 15.7291C9.42599 15.9993 9.5774 16.1344 9.7547 16.1876C9.90861 16.2338 10.0796 16.2338 10.2336 16.1876C10.4109 16.1344 10.5623 15.9993 10.8651 15.7291C12.5123 14.2591 16.03 11.0604 17.2683 9.467C18.9076 7.35748 18.6496 4.35656 16.5262 2.59168C14.4028 0.826798 11.6603 1.332 9.99413 3.27985Z" fill="white" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
