@@ -25,7 +25,7 @@ function Favourite() {
       </div>
  {/* Fav Movies title */}
       <div className="mt-6 text-lg font-medium">
-        {favMovies.length  ? (
+        {favMovies.length == 0 ? (
           // Display message when movies array is empty
           <div className="mt-16 text-2xl font-semibold flex justify-center items-center bg-[#FF0059] gap-10 rounded-xl w-96"><svg width="50" height="50" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" clipRule="evenodd" d="M9.99413 3.27985C8.328 1.332 5.54963 0.808035 3.46208 2.59168C1.37454 4.37532 1.08064 7.35748 2.72 9.467C3.95825 11.0604 7.47592 14.2591 9.12318 15.7291C9.42599 15.9993 9.5774 16.1344 9.7547 16.1876C9.90861 16.2338 10.0796 16.2338 10.2336 16.1876C10.4109 16.1344 10.5623 15.9993 10.8651 15.7291C12.5123 14.2591 16.03 11.0604 17.2683 9.467C18.9076 7.35748 18.6496 4.35656 16.5262 2.59168C14.4028 0.826798 11.6603 1.332 9.99413 3.27985Z" fill="white" stroke="white" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
