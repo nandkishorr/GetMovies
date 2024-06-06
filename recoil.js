@@ -5,3 +5,7 @@ export const moviesData = atom({
     default: [],
 });
 
+export const activeComponentState = atom({
+    key: 'activeComponentState',
+    default: 'Home', // Default active component is Home
+  });
