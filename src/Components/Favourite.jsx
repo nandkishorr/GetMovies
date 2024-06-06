@@ -1,9 +1,9 @@
 import { TfiArrowCircleLeft } from "react-icons/tfi";
-import Card from "./Card";
+// import Card from "./Card";
 function Favourite() {
     
   return (
-    <div className="h-fit w-full flex flex-col bg-[#F5F5F5] px-20 py-16">
+    <div className="min-h-screen w-full flex flex-col bg-[#F5F5F5] px-20 py-16">
       {/* top section */}
       <div className="w-full flex justify-between">
             <div className="flex text-4xl font-semibold items-center gap-3"><TfiArrowCircleLeft />My Favourites</div>
@@ -17,7 +17,7 @@ function Favourite() {
       </div>
  {/* Fav Movies title */}
         <div className="w-full h-fit grid grid-cols-4 gap-x-28 gap-y-10 mt-20">
-        <Card/><Card/><Card/><Card/><Card/><Card/><Card/><Card/><Card/><Card/><Card/>
+        {/* <Card/> */}
         </div>
         
    
