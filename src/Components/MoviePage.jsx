@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
+import { BASE_URL } from '../../constants';
 
 function MoviePage() {
   const [movies, setMovies] = useState([]);
@@ -9,7 +10,7 @@ function MoviePage() {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/movies'); // Replace with your actual API endpoint
+        const response = await fetch(`${BASE_URL}/api/movies`); // Replace with your actual API endpoint
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { moviesData,activeComponentState } from '../../recoil';
 import { useSetRecoilState } from 'recoil';
+import{BASE_URL} from '../../constants'
 function Navbar() {
   const setActiveComponent = useSetRecoilState(activeComponentState);
   const handleSetActiveComponent = (component) => {
@@ -13,7 +14,7 @@ function Navbar() {
 
   const handleSearch = async () => {
     try {
-       const response = await fetch(`http://localhost:3000/api/movies/search?title=${title}`);
+       const response = await fetch(`${BASE_URL}/api/movies/search?title=${title}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
