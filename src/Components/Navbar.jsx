@@ -1,5 +1,32 @@
-
+import React, { useState, useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { moviesData } from '../../recoil';
 function Navbar() {
+  const [moviesState, setMoviesState] = useRecoilState(moviesData)
+
+  const [error, setError] = useState(null);
+  const [title, setTitle] = useState("");
+
+  const handleSearch = async () => {
+    try {
+       const response = await fetch(`http://localhost:3000/api/movies/search?title=${title}`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setMoviesState(data);
+  
+    } catch (error) {
+      setError(error);
+
+    }
+  };
+  
+  const handleInputChange = (event) => {
+    setTitle(event.target.value);
+  };
+
+
   return (
     <div className="h-[104px] w-full py-[32px] px-[98px] bg-white flex justify-between items-center">
     <div className="flex gap-3 items-center">
@@ -12,10 +39,15 @@ function Navbar() {
 </div>
         {/* search */}
         <div className="h-[40px] w-[476px] flex items-center rounded-lg p-2 border-2 border-gray-200 gap-3">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" cursor="pointer">
+            <svg  onClick={handleSearch} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" cursor="pointer">
             <path d="M17.5 17.5L14.5834 14.5833M16.6667 9.58333C16.6667 13.4954 13.4954 16.6667 9.58333 16.6667C5.67132 16.6667 2.5 13.4954 2.5 9.58333C2.5 5.67132 5.67132 2.5 9.58333 2.5C13.4954 2.5 16.6667 5.67132 16.6667 9.58333Z" stroke="#667085" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-        <input type="text" className="w-full bg-transparent outline-none" placeholder="Search for products, brands and more"/>
+            <input
+            type="text"
+            className="w-full bg-transparent outline-none"
+            placeholder="Search for movies..."
+            value={title}
+            onChange={handleInputChange}/>
         </div>
       </div>
         {/* fav button */}
