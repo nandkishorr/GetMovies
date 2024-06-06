@@ -10,7 +10,7 @@ const HeartButton = () => {
   };
 
   return (
-    <div className='h-8 w-8 absolute bg-white top-5 right-5 rounded-full'>
+    <div className='h-8 w-8 absolute bg-slate-100 top-5 right-5 rounded-full'>
     <div className="flex items-center justify-center m-2">
       <input
         type="Button"
