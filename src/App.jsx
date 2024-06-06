@@ -1,6 +1,7 @@
 import Favourite from "./Components/Favourite"
 // import Home from "./Components/Home"
 import Navbar from "./Components/Navbar"
+import Search from "./Components/Search"
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
   <div className="h-screen w-full">
             <Navbar/>
             {/* <Home/> */}
-            <Favourite/>
+            {/* <Favourite/> */}
+            <Search/>
   </div>
   )
 }
