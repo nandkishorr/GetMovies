@@ -1,18 +1,18 @@
-//  import Favourite from "./Components/Favourite"
+import Favourite from "./Components/Favourite"
  import Home from "./Components/Home"
 
 import Navbar from "./Components/Navbar"
-//  import Search from "./Components/Search"
+ import Search from "./Components/Search"
 
 function App() {
  
 
   return (
   <div className="h-screen w-full">
-            <Navbar />
+             <Navbar />
             <Home/>
-            {/* <Favourite/> */}
-            
+            <Favourite/>
+           
             {/* <Search /> */}
   </div>
   )

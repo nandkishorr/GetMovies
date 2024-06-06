@@ -1,7 +1,9 @@
 import { TfiArrowCircleLeft } from "react-icons/tfi";
+import Card from "./Card";
 // import Card from "./Card";
 function Favourite() {
-    
+  const favMoviesString = localStorage.getItem('favoriteMovies');
+  const favMovies = JSON.parse(favMoviesString) || [];
   return (
     <div className="min-h-screen w-full flex flex-col bg-[#F5F5F5] px-20 py-16">
       {/* top section */}
@@ -17,7 +19,9 @@ function Favourite() {
       </div>
  {/* Fav Movies title */}
         <div className="w-full h-fit grid grid-cols-4 gap-x-28 gap-y-10 mt-20">
-        {/* <Card/> */}
+        {favMovies.map((movie) => (
+          <Card key={movie.id} movie={movie} />
+        ))}
         </div>
         
    

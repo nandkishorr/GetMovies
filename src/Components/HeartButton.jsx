@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-const HeartButton = ({ onClick }) => {
-  const [checked, setChecked] = useState(false);
+const HeartButton = ({ onClick,fav }) => {
+  const [checked, setChecked] = useState(fav);
 
   const handleClick = () => {
     setChecked(!checked);

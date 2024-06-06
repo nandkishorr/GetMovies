@@ -1,18 +1,17 @@
-// src/components/Card.js
-import React from 'react';
 import PropTypes from 'prop-types';
 import HeartButton from './HeartButton';
-
 function Card({ movie }) {
   const handleHeartClick = (isChecked) => {
     // Get existing favorite movies from local storage or initialize an empty array
     const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
+    const index = favoriteMovies.findIndex((m) => m.id === movie.id);
     if (isChecked) {
-      // Add the movie to favorites if the heart button is checked
-      favoriteMovies.push(movie);
+      // Add the movie to favorites if the heart button is checked and it's not already in the list
+      if (index === -1) {
+        favoriteMovies.push({ ...movie, fav: true });
+      }
     } else {
-      // Remove the movie from favorites if the heart button is unchecked
-      const index = favoriteMovies.findIndex((m) => m.id === movie.id);
+      // Remove the movie from favorites if the heart button is unchecked and it exists in the list
       if (index !== -1) {
         favoriteMovies.splice(index, 1);
       }
@@ -23,7 +22,7 @@ function Card({ movie }) {
 
   return (
     <div className="w-[250px] h-[465px] rounded-xl relative">
-      <HeartButton onClick={handleHeartClick} />
+      <HeartButton onClick={handleHeartClick} fav={movie.fav}/>
       <img className="h-[370px] w-full rounded-xl" src={movie.banner_image} alt={movie.title} />
       <div className='w-full font-semibold flex flex-col pt-2'>
         <span className='text-sm text-slate-500'>{movie.year}</span>
@@ -34,12 +33,14 @@ function Card({ movie }) {
   );
 }
 
+
 Card.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
     banner_image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     year: PropTypes.number.isRequired,
+    fav: PropTypes.bool,
   }).isRequired,
 };
 
