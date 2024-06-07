@@ -1,4 +1,4 @@
-# Movie Reviewer Application
+# GetMovies
 
 A React application for reviewing movies. Users can search for movies, mark them as favourites, store favourites in local storage, and find movies from the favourite list.
 
