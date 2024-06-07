@@ -38,10 +38,12 @@ A React application for reviewing movies. Users can search for movies, mark them
    
 4. **Similarly the vite frontend file is opend with yarn:**
    
-5.   ```sh
+   ```sh
     npm yarn
     ```
+    
    The application will be available at `http://localhost:5173`.
+   
 ## Usage
 
 - **Search for a movie**: Use the search bar to filter movies by title.
