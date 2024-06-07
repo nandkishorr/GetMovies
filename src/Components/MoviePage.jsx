@@ -40,7 +40,7 @@ function MoviePage() {
       {/* Movies title */}
       <div className="text-2xl font-semibold text-slate-900">Movies</div>
       {/* group of cards */}
-      <div className="w-full h-full grid grid-cols-4 gap-x-28 gap-10 mt-5">
+      <div className="w-full h-full grid grid-cols-4 gap-x-16 gap-y-16 mt-5">
         {movies.map((movie) => (
           <Card key={movie.id} movie={movie} />
         ))}
