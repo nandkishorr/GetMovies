@@ -58,8 +58,26 @@ A React application for reviewing movies. Users can search for movies, mark them
 4. Push to the branch: `git push origin my-feature-branch`
 5. Open a pull request.
 
-- **Live Demo**: [Movie Reviewer Live Demo](https://get-movies-gamma.vercel.app/)
+## End points
+
+1. Get Movies [GET /api/movies].
+2. Search Movies [GET /api/movies/search?title={title}].
+
+## .ENV Variables
+
+**Front-End Url**:
+
+    1. BASE_URL="http://localhost:3000" (domain of back-end api)
+    
+**Back-End Url**:  
+
+    1. MONGODB_URL="mongodb connection url"
+    
+## Links
+
+- **Frontend Url**: [Live Demo](https://get-movies-gamma.vercel.app)
 -  **Backend Url**: [Live Demo](https://getmovies-backend-a11o.onrender.com)
+-   **Backend Repo**: [Repo Link](https://github.com/nandkishorr/GetMovies-backend.git)
 
 
 
